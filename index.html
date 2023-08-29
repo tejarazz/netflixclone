@@ -231,12 +231,15 @@
 
         buttons.forEach(button => {
             const expandedContent = button.nextElementSibling;
+            let isExpanded = false;
 
             button.addEventListener('click', () => {
-                if (expandedContent.style.display === 'none') {
+                if (!isExpanded) {
                     expandedContent.style.display = 'flex';
+                    isExpanded = true;
                 } else {
                     expandedContent.style.display = 'none';
+                    isExpanded = false;
                 }
             });
         });
